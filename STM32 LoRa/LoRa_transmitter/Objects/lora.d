@@ -7,7 +7,7 @@
 .\objects\lora.o: ..\..\CMSIS\Include\core_cmInstr.h
 .\objects\lora.o: ..\..\CMSIS\Include\core_cmFunc.h
 .\objects\lora.o: ..\..\CMSIS\Device\ST\STM32L1xx\Include\system_stm32l1xx.h
-.\objects\lora.o: ..\..\STM32 LoRa\stm32l1xx_conf.h
+.\objects\lora.o: ..\..\..\STM32L1_Projects\stm32l1xx_conf.h
 .\objects\lora.o: ..\..\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_adc.h
 .\objects\lora.o: ..\..\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h
 .\objects\lora.o: ..\..\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_aes.h

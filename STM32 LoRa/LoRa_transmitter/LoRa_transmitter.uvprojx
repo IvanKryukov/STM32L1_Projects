@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\CMSIS\Include;..\..\CMSIS\Device\ST\STM32L1xx\Include;..\..\CMSIS\Device\ST\STM32L1xx\Source\Templates;..\..\STM32L1xx_StdPeriph_Driver;..\..\STM32L1xx_StdPeriph_Driver\inc;..\..\STM32L1xx_StdPeriph_Driver\src;..\..\STM32 LoRa;..\LoRa_transmitter</IncludePath>
+              <IncludePath>..\..\CMSIS\Include;..\..\CMSIS\Device\ST\STM32L1xx\Include;..\..\CMSIS\Device\ST\STM32L1xx\Source\Templates;..\..\STM32L1xx_StdPeriph_Driver;..\..\STM32L1xx_StdPeriph_Driver\inc;..\..\STM32L1xx_StdPeriph_Driver\src;..\..\STM32 LoRa;..\LoRa_transmitter;..\..\..\STM32L1_Projects</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -541,14 +541,14 @@
               <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Include\system_stm32l1xx.h</FilePath>
             </File>
             <File>
-              <FileName>stm32l1xx_conf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\stm32l1xx_conf.h</FilePath>
-            </File>
-            <File>
               <FileName>stm32l1xx.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l1xx_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\stm32l1xx_conf.h</FilePath>
             </File>
           </Files>
         </Group>

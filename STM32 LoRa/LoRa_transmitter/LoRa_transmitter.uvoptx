@@ -561,8 +561,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\stm32l1xx_conf.h</PathWithFileName>
-      <FilenameWithoutPath>stm32l1xx_conf.h</FilenameWithoutPath>
+      <PathWithFileName>..\..\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h</PathWithFileName>
+      <FilenameWithoutPath>stm32l1xx.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -573,8 +573,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h</PathWithFileName>
-      <FilenameWithoutPath>stm32l1xx.h</FilenameWithoutPath>
+      <PathWithFileName>..\..\stm32l1xx_conf.h</PathWithFileName>
+      <FilenameWithoutPath>stm32l1xx_conf.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -590,7 +590,7 @@
       <GroupNumber>4</GroupNumber>
       <FileNumber>33</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>

@@ -173,7 +173,6 @@ void SysTick_Handler(void)
   else
   {
     Counter = 0x00;
-    STM_EVAL_LEDToggle(LED1);
   }
 }
 
