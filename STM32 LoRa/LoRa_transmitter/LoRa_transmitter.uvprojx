@@ -395,6 +395,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Source\Templates\system_stm32l1xx.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32l1xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h</FilePath>
+            </File>
+            <File>
+              <FileName>system_stm32l1xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Include\system_stm32l1xx.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -539,16 +549,6 @@
               <FileName>system_stm32l1xx.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Include\system_stm32l1xx.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l1xx.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l1xx_conf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\stm32l1xx_conf.h</FilePath>
             </File>
           </Files>
         </Group>
