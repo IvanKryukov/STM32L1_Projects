@@ -30,6 +30,7 @@
 #define REG_DETECTION_THRESHOLD  0x37
 #define REG_SYNC_WORD            0x39
 #define REG_DIO_MAPPING_1        0x40
+#define REG_DIO_MAPPING_2        0x40
 #define REG_VERSION              0x42
 
 /* modes */ 
@@ -57,24 +58,40 @@
 #define PA_OUTPUT_RFO_PIN      0
 #define PA_OUTPUT_PA_BOOST_PIN 1
 
-/* base functions */
+/* Base functions */
 uint8_t SPILora_transfer(uint8_t address, uint8_t t_data);
-void writeRegister(uint8_t address, uint8_t value);
+void 		writeRegister(uint8_t address, uint8_t value);
 uint8_t readRegister(uint8_t address);
+uint8_t get_length(uint8_t* data);
 
-int LoRa_begin(uint32_t frequency);
+void explicitHeaderMode(void);
+void implicitHeaderMode(void);
 
-uint8_t write(uint8_t *buffer, uint8_t size);
-int8_t read(void);
+/* Communication functions */
+uint8_t LoRa_begin(uint32_t frequency);
+
+uint8_t LoRa_beginPacket(uint8_t length);
+void 		LoRa_endPacket(void);
+
+uint8_t LoRa_parsePacket(uint8_t size);
+
+void receive(int size);
+int8_t 	read(void);
 uint8_t available(void);
-void idle(void);
-void sleep(void);
+void 		idle(void);
+void 		sleep(void);
 
-void setTxPower(int level, int outputPin);
-void setFrequency(uint32_t frequency);
+void 		setTxPower(int level, int outputPin);
+void 		setFrequency(uint32_t frequency);
 
-void LoRa_write(char* data);
-uint8_t get_length(char* data);
+void 		LoRa_write(uint8_t* data);
+void 		LoRa_writeBytes(uint8_t* data, uint8_t length);
+
+uint8_t LoRa_readStart(void);
+uint8_t LoRa_read(void);
+uint8_t LoRa_readBytes(void);
+
+void handleDio0Rise(void);
 
 /* LoRa functions */
 
