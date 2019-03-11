@@ -164,6 +164,9 @@ Section Cross References
     main.o(i.GPIO_Settings) refers to stm32l1xx_gpio.o(i.GPIO_Init) for GPIO_Init
     main.o(i.GPIO_Settings) refers to stm32l1xx_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     main.o(i.GPIO_Settings) refers to stm32l1xx_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    main.o(i.LoRa_Setup) refers to lora.o(i.LoRa_begin) for LoRa_begin
+    main.o(i.LoRa_Setup) refers to lora.o(i.writeRegister) for writeRegister
+    main.o(i.LoRa_Setup) refers to main.o(.data) for i
     main.o(i.SPI1_SendBytes) refers to stm32l1xx_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     main.o(i.SPI1_SendBytes) refers to stm32l1xx_spi.o(i.SPI_I2S_GetFlagStatus) for SPI_I2S_GetFlagStatus
     main.o(i.SPI1_SendBytes) refers to stm32l1xx_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
@@ -175,9 +178,9 @@ Section Cross References
     main.o(i.SPI_Settings) refers to stm32l1xx_spi.o(i.SPI_Cmd) for SPI_Cmd
     main.o(i.main) refers to main.o(i.GPIO_Settings) for GPIO_Settings
     main.o(i.main) refers to main.o(i.SPI_Settings) for SPI_Settings
-    main.o(i.main) refers to lora.o(i.LoRa_begin) for LoRa_begin
-    main.o(i.main) refers to lora.o(i.writeRegister) for writeRegister
+    main.o(i.main) refers to main.o(i.LoRa_Setup) for LoRa_Setup
     main.o(i.main) refers to lora.o(i.LoRa_write) for LoRa_write
+    main.o(i.main) refers to main.o(.data) for i
     lora.o(i.LoRa_begin) refers to stm32l1xx_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     lora.o(i.LoRa_begin) refers to stm32l1xx_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     lora.o(i.LoRa_begin) refers to lora.o(i.readRegister) for readRegister
@@ -187,25 +190,50 @@ Section Cross References
     lora.o(i.LoRa_begin) refers to lora.o(i.setTxPower) for setTxPower
     lora.o(i.LoRa_begin) refers to lora.o(i.idle) for idle
     lora.o(i.LoRa_begin) refers to lora.o(.data) for _reset
-    lora.o(i.LoRa_write) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.LoRa_beginPacket) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.LoRa_endPacket) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.LoRa_endPacket) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.LoRa_parsePacket) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.LoRa_parsePacket) refers to lora.o(i.implicitHeaderMode) for implicitHeaderMode
+    lora.o(i.LoRa_parsePacket) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.LoRa_parsePacket) refers to lora.o(i.explicitHeaderMode) for explicitHeaderMode
+    lora.o(i.LoRa_parsePacket) refers to lora.o(i.idle) for idle
+    lora.o(i.LoRa_parsePacket) refers to lora.o(.data) for _packetIndex
+    lora.o(i.LoRa_read) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.LoRa_read) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.LoRa_readStart) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.LoRa_readStart) refers to lora.o(i.writeRegister) for writeRegister
     lora.o(i.LoRa_write) refers to lora.o(i.get_length) for get_length
+    lora.o(i.LoRa_write) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.LoRa_write) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.LoRa_writeBytes) refers to lora.o(i.writeRegister) for writeRegister
     lora.o(i.SPILora_transfer) refers to stm32l1xx_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     lora.o(i.SPILora_transfer) refers to stm32l1xx_spi.o(i.SPI_I2S_GetFlagStatus) for SPI_I2S_GetFlagStatus
     lora.o(i.SPILora_transfer) refers to stm32l1xx_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     lora.o(i.available) refers to lora.o(i.readRegister) for readRegister
     lora.o(i.available) refers to lora.o(.data) for _packetIndex
+    lora.o(i.explicitHeaderMode) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.explicitHeaderMode) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.explicitHeaderMode) refers to lora.o(.data) for _implicitHeaderMode
+    lora.o(i.handleDio0Rise) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.handleDio0Rise) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.handleDio0Rise) refers to lora.o(.data) for _packetIndex
     lora.o(i.idle) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.implicitHeaderMode) refers to lora.o(i.readRegister) for readRegister
+    lora.o(i.implicitHeaderMode) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.implicitHeaderMode) refers to lora.o(.data) for _implicitHeaderMode
     lora.o(i.read) refers to lora.o(i.available) for available
     lora.o(i.read) refers to lora.o(i.readRegister) for readRegister
     lora.o(i.read) refers to lora.o(.data) for _packetIndex
     lora.o(i.readRegister) refers to lora.o(i.SPILora_transfer) for SPILora_transfer
+    lora.o(i.receive) refers to lora.o(i.implicitHeaderMode) for implicitHeaderMode
+    lora.o(i.receive) refers to lora.o(i.writeRegister) for writeRegister
+    lora.o(i.receive) refers to lora.o(i.explicitHeaderMode) for explicitHeaderMode
     lora.o(i.setFrequency) refers to lludivv7m.o(.text) for __aeabi_uldivmod
     lora.o(i.setFrequency) refers to lora.o(i.writeRegister) for writeRegister
     lora.o(i.setFrequency) refers to lora.o(.data) for _frequency
     lora.o(i.setTxPower) refers to lora.o(i.writeRegister) for writeRegister
     lora.o(i.sleep) refers to lora.o(i.writeRegister) for writeRegister
-    lora.o(i.write) refers to lora.o(i.readRegister) for readRegister
-    lora.o(i.write) refers to lora.o(i.writeRegister) for writeRegister
     lora.o(i.writeRegister) refers to lora.o(i.SPILora_transfer) for SPILora_transfer
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
@@ -924,14 +952,23 @@ Removing Unused input sections from the image.
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
     Removing main.o(i.SPI1_SendBytes), (76 bytes).
-    Removing main.o(.data), (6 bytes).
     Removing lora.o(.rev16_text), (4 bytes).
     Removing lora.o(.revsh_text), (4 bytes).
+    Removing lora.o(i.LoRa_beginPacket), (32 bytes).
+    Removing lora.o(i.LoRa_endPacket), (36 bytes).
+    Removing lora.o(i.LoRa_parsePacket), (152 bytes).
+    Removing lora.o(i.LoRa_read), (56 bytes).
+    Removing lora.o(i.LoRa_readBytes), (2 bytes).
+    Removing lora.o(i.LoRa_readStart), (58 bytes).
+    Removing lora.o(i.LoRa_writeBytes), (54 bytes).
     Removing lora.o(i.available), (24 bytes).
+    Removing lora.o(i.explicitHeaderMode), (32 bytes).
+    Removing lora.o(i.handleDio0Rise), (88 bytes).
+    Removing lora.o(i.implicitHeaderMode), (32 bytes).
     Removing lora.o(i.read), (40 bytes).
-    Removing lora.o(i.write), (64 bytes).
+    Removing lora.o(i.receive), (36 bytes).
 
-613 unused section(s) (total 23328 bytes) removed from the image.
+622 unused section(s) (total 23836 bytes) removed from the image.
 
 ==============================================================================
 
@@ -941,33 +978,33 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
@@ -977,17 +1014,17 @@ Image Symbol Table
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludivv7m.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
@@ -1117,33 +1154,35 @@ Image Symbol Table
     i.GPIO_ResetBits                         0x08000430   Section        0  stm32l1xx_gpio.o(i.GPIO_ResetBits)
     i.GPIO_SetBits                           0x08000434   Section        0  stm32l1xx_gpio.o(i.GPIO_SetBits)
     i.GPIO_Settings                          0x08000438   Section        0  main.o(i.GPIO_Settings)
-    i.LoRa_begin                             0x0800047c   Section        0  lora.o(i.LoRa_begin)
-    i.LoRa_write                             0x08000518   Section        0  lora.o(i.LoRa_write)
-    i.RCC_AHBPeriphClockCmd                  0x08000550   Section        0  stm32l1xx_rcc.o(i.RCC_AHBPeriphClockCmd)
-    i.RCC_APB2PeriphClockCmd                 0x08000570   Section        0  stm32l1xx_rcc.o(i.RCC_APB2PeriphClockCmd)
-    i.SPILora_transfer                       0x08000590   Section        0  lora.o(i.SPILora_transfer)
-    i.SPI_Cmd                                0x080005fc   Section        0  stm32l1xx_spi.o(i.SPI_Cmd)
-    i.SPI_I2S_GetFlagStatus                  0x08000614   Section        0  stm32l1xx_spi.o(i.SPI_I2S_GetFlagStatus)
-    i.SPI_Init                               0x08000626   Section        0  stm32l1xx_spi.o(i.SPI_Init)
-    i.SPI_Settings                           0x08000664   Section        0  main.o(i.SPI_Settings)
-    i.SetSysClock                            0x08000720   Section        0  system_stm32l1xx.o(i.SetSysClock)
-    SetSysClock                              0x08000721   Thumb Code   258  system_stm32l1xx.o(i.SetSysClock)
-    i.SystemInit                             0x08000830   Section        0  system_stm32l1xx.o(i.SystemInit)
-    i.get_length                             0x08000898   Section        0  lora.o(i.get_length)
-    i.idle                                   0x080008ac   Section        0  lora.o(i.idle)
-    i.main                                   0x080008b8   Section        0  main.o(i.main)
-    i.readRegister                           0x08000948   Section        0  lora.o(i.readRegister)
-    i.setFrequency                           0x08000958   Section        0  lora.o(i.setFrequency)
-    i.setTxPower                             0x080009ac   Section        0  lora.o(i.setTxPower)
-    i.sleep                                  0x080009ee   Section        0  lora.o(i.sleep)
-    i.writeRegister                          0x080009fa   Section        0  lora.o(i.writeRegister)
-    .data                                    0x20000000   Section       11  lora.o(.data)
-    .bss                                     0x2000000c   Section       96  libspace.o(.bss)
-    HEAP                                     0x20000070   Section      512  startup_stm32l1xx_mdp.o(HEAP)
-    Heap_Mem                                 0x20000070   Data         512  startup_stm32l1xx_mdp.o(HEAP)
-    STACK                                    0x20000270   Section     1024  startup_stm32l1xx_mdp.o(STACK)
-    Stack_Mem                                0x20000270   Data        1024  startup_stm32l1xx_mdp.o(STACK)
-    __initial_sp                             0x20000670   Data           0  startup_stm32l1xx_mdp.o(STACK)
+    i.LoRa_Setup                             0x0800047c   Section        0  main.o(i.LoRa_Setup)
+    i.LoRa_begin                             0x080004e8   Section        0  lora.o(i.LoRa_begin)
+    i.LoRa_write                             0x08000584   Section        0  lora.o(i.LoRa_write)
+    i.RCC_AHBPeriphClockCmd                  0x080005c8   Section        0  stm32l1xx_rcc.o(i.RCC_AHBPeriphClockCmd)
+    i.RCC_APB2PeriphClockCmd                 0x080005e8   Section        0  stm32l1xx_rcc.o(i.RCC_APB2PeriphClockCmd)
+    i.SPILora_transfer                       0x08000608   Section        0  lora.o(i.SPILora_transfer)
+    i.SPI_Cmd                                0x08000674   Section        0  stm32l1xx_spi.o(i.SPI_Cmd)
+    i.SPI_I2S_GetFlagStatus                  0x0800068c   Section        0  stm32l1xx_spi.o(i.SPI_I2S_GetFlagStatus)
+    i.SPI_Init                               0x0800069e   Section        0  stm32l1xx_spi.o(i.SPI_Init)
+    i.SPI_Settings                           0x080006dc   Section        0  main.o(i.SPI_Settings)
+    i.SetSysClock                            0x08000798   Section        0  system_stm32l1xx.o(i.SetSysClock)
+    SetSysClock                              0x08000799   Thumb Code   258  system_stm32l1xx.o(i.SetSysClock)
+    i.SystemInit                             0x080008a8   Section        0  system_stm32l1xx.o(i.SystemInit)
+    i.get_length                             0x08000910   Section        0  lora.o(i.get_length)
+    i.idle                                   0x08000924   Section        0  lora.o(i.idle)
+    i.main                                   0x08000930   Section        0  main.o(i.main)
+    i.readRegister                           0x08000990   Section        0  lora.o(i.readRegister)
+    i.setFrequency                           0x080009a0   Section        0  lora.o(i.setFrequency)
+    i.setTxPower                             0x080009f4   Section        0  lora.o(i.setTxPower)
+    i.sleep                                  0x08000a36   Section        0  lora.o(i.sleep)
+    i.writeRegister                          0x08000a42   Section        0  lora.o(i.writeRegister)
+    .data                                    0x20000000   Section       12  main.o(.data)
+    .data                                    0x2000000c   Section       11  lora.o(.data)
+    .bss                                     0x20000018   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000078   Section      512  startup_stm32l1xx_mdp.o(HEAP)
+    Heap_Mem                                 0x20000078   Data         512  startup_stm32l1xx_mdp.o(HEAP)
+    STACK                                    0x20000278   Section     1024  startup_stm32l1xx_mdp.o(STACK)
+    Stack_Mem                                0x20000278   Data        1024  startup_stm32l1xx_mdp.o(STACK)
+    __initial_sp                             0x20000678   Data           0  startup_stm32l1xx_mdp.o(STACK)
 
     Global Symbols
 
@@ -1314,33 +1353,36 @@ Image Symbol Table
     GPIO_ResetBits                           0x08000431   Thumb Code     4  stm32l1xx_gpio.o(i.GPIO_ResetBits)
     GPIO_SetBits                             0x08000435   Thumb Code     4  stm32l1xx_gpio.o(i.GPIO_SetBits)
     GPIO_Settings                            0x08000439   Thumb Code    62  main.o(i.GPIO_Settings)
-    LoRa_begin                               0x0800047d   Thumb Code   144  lora.o(i.LoRa_begin)
-    LoRa_write                               0x08000519   Thumb Code    56  lora.o(i.LoRa_write)
-    RCC_AHBPeriphClockCmd                    0x08000551   Thumb Code    26  stm32l1xx_rcc.o(i.RCC_AHBPeriphClockCmd)
-    RCC_APB2PeriphClockCmd                   0x08000571   Thumb Code    26  stm32l1xx_rcc.o(i.RCC_APB2PeriphClockCmd)
-    SPILora_transfer                         0x08000591   Thumb Code    98  lora.o(i.SPILora_transfer)
-    SPI_Cmd                                  0x080005fd   Thumb Code    24  stm32l1xx_spi.o(i.SPI_Cmd)
-    SPI_I2S_GetFlagStatus                    0x08000615   Thumb Code    18  stm32l1xx_spi.o(i.SPI_I2S_GetFlagStatus)
-    SPI_Init                                 0x08000627   Thumb Code    60  stm32l1xx_spi.o(i.SPI_Init)
-    SPI_Settings                             0x08000665   Thumb Code   180  main.o(i.SPI_Settings)
-    SystemInit                               0x08000831   Thumb Code    88  system_stm32l1xx.o(i.SystemInit)
-    get_length                               0x08000899   Thumb Code    20  lora.o(i.get_length)
-    idle                                     0x080008ad   Thumb Code    12  lora.o(i.idle)
-    main                                     0x080008b9   Thumb Code   110  main.o(i.main)
-    readRegister                             0x08000949   Thumb Code    16  lora.o(i.readRegister)
-    setFrequency                             0x08000959   Thumb Code    74  lora.o(i.setFrequency)
-    setTxPower                               0x080009ad   Thumb Code    66  lora.o(i.setTxPower)
-    sleep                                    0x080009ef   Thumb Code    12  lora.o(i.sleep)
-    writeRegister                            0x080009fb   Thumb Code    18  lora.o(i.writeRegister)
-    Region$$Table$$Base                      0x08000a0c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000a2c   Number         0  anon$$obj.o(Region$$Table)
-    _implicitHeaderMode                      0x20000000   Data           1  lora.o(.data)
-    _frequency                               0x20000004   Data           4  lora.o(.data)
-    _packetIndex                             0x20000008   Data           1  lora.o(.data)
-    _reset                                   0x20000009   Data           1  lora.o(.data)
-    _onReceive                               0x2000000a   Data           1  lora.o(.data)
-    __libspace_start                         0x2000000c   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x2000006c   Data           0  libspace.o(.bss)
+    LoRa_Setup                               0x0800047d   Thumb Code    98  main.o(i.LoRa_Setup)
+    LoRa_begin                               0x080004e9   Thumb Code   144  lora.o(i.LoRa_begin)
+    LoRa_write                               0x08000585   Thumb Code    68  lora.o(i.LoRa_write)
+    RCC_AHBPeriphClockCmd                    0x080005c9   Thumb Code    26  stm32l1xx_rcc.o(i.RCC_AHBPeriphClockCmd)
+    RCC_APB2PeriphClockCmd                   0x080005e9   Thumb Code    26  stm32l1xx_rcc.o(i.RCC_APB2PeriphClockCmd)
+    SPILora_transfer                         0x08000609   Thumb Code    98  lora.o(i.SPILora_transfer)
+    SPI_Cmd                                  0x08000675   Thumb Code    24  stm32l1xx_spi.o(i.SPI_Cmd)
+    SPI_I2S_GetFlagStatus                    0x0800068d   Thumb Code    18  stm32l1xx_spi.o(i.SPI_I2S_GetFlagStatus)
+    SPI_Init                                 0x0800069f   Thumb Code    60  stm32l1xx_spi.o(i.SPI_Init)
+    SPI_Settings                             0x080006dd   Thumb Code   180  main.o(i.SPI_Settings)
+    SystemInit                               0x080008a9   Thumb Code    88  system_stm32l1xx.o(i.SystemInit)
+    get_length                               0x08000911   Thumb Code    20  lora.o(i.get_length)
+    idle                                     0x08000925   Thumb Code    12  lora.o(i.idle)
+    main                                     0x08000931   Thumb Code    64  main.o(i.main)
+    readRegister                             0x08000991   Thumb Code    16  lora.o(i.readRegister)
+    setFrequency                             0x080009a1   Thumb Code    74  lora.o(i.setFrequency)
+    setTxPower                               0x080009f5   Thumb Code    66  lora.o(i.setTxPower)
+    sleep                                    0x08000a37   Thumb Code    12  lora.o(i.sleep)
+    writeRegister                            0x08000a43   Thumb Code    18  lora.o(i.writeRegister)
+    Region$$Table$$Base                      0x08000a54   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000a74   Number         0  anon$$obj.o(Region$$Table)
+    arr                                      0x20000000   Data           6  main.o(.data)
+    i                                        0x20000008   Data           4  main.o(.data)
+    _implicitHeaderMode                      0x2000000c   Data           1  lora.o(.data)
+    _frequency                               0x20000010   Data           4  lora.o(.data)
+    _packetIndex                             0x20000014   Data           1  lora.o(.data)
+    _reset                                   0x20000015   Data           1  lora.o(.data)
+    _onReceive                               0x20000016   Data           1  lora.o(.data)
+    __libspace_start                         0x20000018   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000078   Data           0  libspace.o(.bss)
 
 
 
@@ -1350,107 +1392,108 @@ Memory Map of the image
 
   Image Entry point : 0x08000125
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000a38, Max: 0x00040000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000a8c, Max: 0x00040000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000a2c, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000a74, Max: 0x00040000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000124   Data   RO            3    RESET               startup_stm32l1xx_mdp.o
-    0x08000124   0x08000124   0x00000008   Code   RO         3996  * !!!main             c_w.l(__main.o)
-    0x0800012c   0x0800012c   0x00000034   Code   RO         4163    !!!scatter          c_w.l(__scatter.o)
-    0x08000160   0x08000160   0x0000001a   Code   RO         4165    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x08000124   0x08000124   0x00000008   Code   RO         4062  * !!!main             c_w.l(__main.o)
+    0x0800012c   0x0800012c   0x00000034   Code   RO         4229    !!!scatter          c_w.l(__scatter.o)
+    0x08000160   0x08000160   0x0000001a   Code   RO         4231    !!handler_copy      c_w.l(__scatter_copy.o)
     0x0800017a   0x0800017a   0x00000002   PAD
-    0x0800017c   0x0800017c   0x0000001c   Code   RO         4167    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000198   0x08000198   0x00000002   Code   RO         4033    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4046    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4048    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4051    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4053    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4055    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4058    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4060    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4062    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4064    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4066    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4068    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4070    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4072    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4074    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4076    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4078    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4082    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4084    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4086    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000000   Code   RO         4088    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x0800019a   0x0800019a   0x00000002   Code   RO         4089    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x0800019c   0x0800019c   0x00000002   Code   RO         4120    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x0800019e   0x0800019e   0x00000000   Code   RO         4146    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x0800019e   0x0800019e   0x00000000   Code   RO         4148    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x0800019e   0x0800019e   0x00000000   Code   RO         4151    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x0800019e   0x0800019e   0x00000000   Code   RO         4154    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x0800019e   0x0800019e   0x00000000   Code   RO         4156    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x0800019e   0x0800019e   0x00000000   Code   RO         4159    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x0800019e   0x0800019e   0x00000002   Code   RO         4160    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x080001a0   0x080001a0   0x00000000   Code   RO         3998    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x080001a0   0x080001a0   0x00000000   Code   RO         4004    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x080001a0   0x080001a0   0x00000006   Code   RO         4016    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x080001a6   0x080001a6   0x00000000   Code   RO         4006    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x080001a6   0x080001a6   0x00000004   Code   RO         4007    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x080001aa   0x080001aa   0x00000000   Code   RO         4009    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x080001aa   0x080001aa   0x00000008   Code   RO         4010    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x080001b2   0x080001b2   0x00000002   Code   RO         4037    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         4093    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x080001b4   0x080001b4   0x00000004   Code   RO         4094    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x080001b8   0x080001b8   0x00000006   Code   RO         4095    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x0800017c   0x0800017c   0x0000001c   Code   RO         4233    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000198   0x08000198   0x00000002   Code   RO         4099    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4112    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4114    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4117    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4119    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4121    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4124    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4126    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4128    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4130    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4132    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4134    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4136    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4138    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4140    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4142    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4144    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4148    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4150    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4152    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO         4154    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x0800019a   0x0800019a   0x00000002   Code   RO         4155    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x0800019c   0x0800019c   0x00000002   Code   RO         4186    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO         4212    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO         4214    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO         4217    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO         4220    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO         4222    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO         4225    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x0800019e   0x0800019e   0x00000002   Code   RO         4226    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x080001a0   0x080001a0   0x00000000   Code   RO         4064    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x080001a0   0x080001a0   0x00000000   Code   RO         4070    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x080001a0   0x080001a0   0x00000006   Code   RO         4082    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x080001a6   0x080001a6   0x00000000   Code   RO         4072    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x080001a6   0x080001a6   0x00000004   Code   RO         4073    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x080001aa   0x080001aa   0x00000000   Code   RO         4075    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x080001aa   0x080001aa   0x00000008   Code   RO         4076    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x080001b2   0x080001b2   0x00000002   Code   RO         4103    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         4159    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x080001b4   0x080001b4   0x00000004   Code   RO         4160    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x080001b8   0x080001b8   0x00000006   Code   RO         4161    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x080001be   0x080001be   0x00000002   PAD
     0x080001c0   0x080001c0   0x00000040   Code   RO            4    .text               startup_stm32l1xx_mdp.o
-    0x08000200   0x08000200   0x000000ee   Code   RO         3992    .text               c_w.l(lludivv7m.o)
-    0x080002ee   0x080002ee   0x00000006   Code   RO         3994    .text               c_w.l(heapauxi.o)
-    0x080002f4   0x080002f4   0x0000004a   Code   RO         4020    .text               c_w.l(sys_stackheap_outer.o)
-    0x0800033e   0x0800033e   0x00000012   Code   RO         4022    .text               c_w.l(exit.o)
-    0x08000350   0x08000350   0x00000008   Code   RO         4034    .text               c_w.l(libspace.o)
-    0x08000358   0x08000358   0x0000000c   Code   RO         4090    .text               c_w.l(sys_exit.o)
-    0x08000364   0x08000364   0x00000002   Code   RO         4109    .text               c_w.l(use_no_semi.o)
-    0x08000366   0x08000366   0x00000000   Code   RO         4111    .text               c_w.l(indicate_semi.o)
+    0x08000200   0x08000200   0x000000ee   Code   RO         4058    .text               c_w.l(lludivv7m.o)
+    0x080002ee   0x080002ee   0x00000006   Code   RO         4060    .text               c_w.l(heapauxi.o)
+    0x080002f4   0x080002f4   0x0000004a   Code   RO         4086    .text               c_w.l(sys_stackheap_outer.o)
+    0x0800033e   0x0800033e   0x00000012   Code   RO         4088    .text               c_w.l(exit.o)
+    0x08000350   0x08000350   0x00000008   Code   RO         4100    .text               c_w.l(libspace.o)
+    0x08000358   0x08000358   0x0000000c   Code   RO         4156    .text               c_w.l(sys_exit.o)
+    0x08000364   0x08000364   0x00000002   Code   RO         4175    .text               c_w.l(use_no_semi.o)
+    0x08000366   0x08000366   0x00000000   Code   RO         4177    .text               c_w.l(indicate_semi.o)
     0x08000366   0x08000366   0x00000084   Code   RO         1409    i.GPIO_Init         stm32l1xx_gpio.o
     0x080003ea   0x080003ea   0x00000046   Code   RO         1410    i.GPIO_PinAFConfig  stm32l1xx_gpio.o
     0x08000430   0x08000430   0x00000004   Code   RO         1416    i.GPIO_ResetBits    stm32l1xx_gpio.o
     0x08000434   0x08000434   0x00000004   Code   RO         1417    i.GPIO_SetBits      stm32l1xx_gpio.o
     0x08000438   0x08000438   0x00000044   Code   RO         3844    i.GPIO_Settings     main.o
-    0x0800047c   0x0800047c   0x0000009c   Code   RO         3891    i.LoRa_begin        lora.o
-    0x08000518   0x08000518   0x00000038   Code   RO         3892    i.LoRa_write        lora.o
-    0x08000550   0x08000550   0x00000020   Code   RO         2056    i.RCC_AHBPeriphClockCmd  stm32l1xx_rcc.o
-    0x08000570   0x08000570   0x00000020   Code   RO         2062    i.RCC_APB2PeriphClockCmd  stm32l1xx_rcc.o
-    0x08000590   0x08000590   0x0000006c   Code   RO         3893    i.SPILora_transfer  lora.o
-    0x080005fc   0x080005fc   0x00000018   Code   RO         2841    i.SPI_Cmd           stm32l1xx_spi.o
-    0x08000614   0x08000614   0x00000012   Code   RO         2849    i.SPI_I2S_GetFlagStatus  stm32l1xx_spi.o
-    0x08000626   0x08000626   0x0000003c   Code   RO         2854    i.SPI_Init          stm32l1xx_spi.o
-    0x08000662   0x08000662   0x00000002   PAD
-    0x08000664   0x08000664   0x000000bc   Code   RO         3846    i.SPI_Settings      main.o
-    0x08000720   0x08000720   0x00000110   Code   RO           12    i.SetSysClock       system_stm32l1xx.o
-    0x08000830   0x08000830   0x00000068   Code   RO           14    i.SystemInit        system_stm32l1xx.o
-    0x08000898   0x08000898   0x00000014   Code   RO         3895    i.get_length        lora.o
-    0x080008ac   0x080008ac   0x0000000c   Code   RO         3896    i.idle              lora.o
-    0x080008b8   0x080008b8   0x00000090   Code   RO         3847    i.main              main.o
-    0x08000948   0x08000948   0x00000010   Code   RO         3898    i.readRegister      lora.o
-    0x08000958   0x08000958   0x00000054   Code   RO         3899    i.setFrequency      lora.o
-    0x080009ac   0x080009ac   0x00000042   Code   RO         3900    i.setTxPower        lora.o
-    0x080009ee   0x080009ee   0x0000000c   Code   RO         3901    i.sleep             lora.o
-    0x080009fa   0x080009fa   0x00000012   Code   RO         3903    i.writeRegister     lora.o
-    0x08000a0c   0x08000a0c   0x00000020   Data   RO         4161    Region$$Table       anon$$obj.o
+    0x0800047c   0x0800047c   0x0000006c   Code   RO         3845    i.LoRa_Setup        main.o
+    0x080004e8   0x080004e8   0x0000009c   Code   RO         3897    i.LoRa_begin        lora.o
+    0x08000584   0x08000584   0x00000044   Code   RO         3904    i.LoRa_write        lora.o
+    0x080005c8   0x080005c8   0x00000020   Code   RO         2056    i.RCC_AHBPeriphClockCmd  stm32l1xx_rcc.o
+    0x080005e8   0x080005e8   0x00000020   Code   RO         2062    i.RCC_APB2PeriphClockCmd  stm32l1xx_rcc.o
+    0x08000608   0x08000608   0x0000006c   Code   RO         3906    i.SPILora_transfer  lora.o
+    0x08000674   0x08000674   0x00000018   Code   RO         2841    i.SPI_Cmd           stm32l1xx_spi.o
+    0x0800068c   0x0800068c   0x00000012   Code   RO         2849    i.SPI_I2S_GetFlagStatus  stm32l1xx_spi.o
+    0x0800069e   0x0800069e   0x0000003c   Code   RO         2854    i.SPI_Init          stm32l1xx_spi.o
+    0x080006da   0x080006da   0x00000002   PAD
+    0x080006dc   0x080006dc   0x000000bc   Code   RO         3847    i.SPI_Settings      main.o
+    0x08000798   0x08000798   0x00000110   Code   RO           12    i.SetSysClock       system_stm32l1xx.o
+    0x080008a8   0x080008a8   0x00000068   Code   RO           14    i.SystemInit        system_stm32l1xx.o
+    0x08000910   0x08000910   0x00000014   Code   RO         3909    i.get_length        lora.o
+    0x08000924   0x08000924   0x0000000c   Code   RO         3911    i.idle              lora.o
+    0x08000930   0x08000930   0x00000060   Code   RO         3848    i.main              main.o
+    0x08000990   0x08000990   0x00000010   Code   RO         3914    i.readRegister      lora.o
+    0x080009a0   0x080009a0   0x00000054   Code   RO         3916    i.setFrequency      lora.o
+    0x080009f4   0x080009f4   0x00000042   Code   RO         3917    i.setTxPower        lora.o
+    0x08000a36   0x08000a36   0x0000000c   Code   RO         3918    i.sleep             lora.o
+    0x08000a42   0x08000a42   0x00000012   Code   RO         3919    i.writeRegister     lora.o
+    0x08000a54   0x08000a54   0x00000020   Data   RO         4227    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000a2c, Size: 0x00000670, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000a74, Size: 0x00000678, Max: 0x00004000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000a2c   0x0000000b   Data   RW         3904    .data               lora.o
-    0x2000000b   0x08000a37   0x00000001   PAD
-    0x2000000c        -       0x00000060   Zero   RW         4035    .bss                c_w.l(libspace.o)
-    0x2000006c   0x08000a37   0x00000004   PAD
-    0x20000070        -       0x00000200   Zero   RW            2    HEAP                startup_stm32l1xx_mdp.o
-    0x20000270        -       0x00000400   Zero   RW            1    STACK               startup_stm32l1xx_mdp.o
+    0x20000000   0x08000a74   0x0000000c   Data   RW         3849    .data               main.o
+    0x2000000c   0x08000a80   0x0000000b   Data   RW         3920    .data               lora.o
+    0x20000017   0x08000a8b   0x00000001   PAD
+    0x20000018        -       0x00000060   Zero   RW         4101    .bss                c_w.l(libspace.o)
+    0x20000078        -       0x00000200   Zero   RW            2    HEAP                startup_stm32l1xx_mdp.o
+    0x20000278        -       0x00000400   Zero   RW            1    STACK               startup_stm32l1xx_mdp.o
 
 
 ==============================================================================
@@ -1460,8 +1503,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       548         32          0         11          0       5552   lora.o
-       400         48          0          0          0       1566   main.o
+       560         32          0         11          0       5856   lora.o
+       460         56          0         12          0       2467   main.o
         64         26        292          0       1536        916   startup_stm32l1xx_mdp.o
        210          0          0          0          0       2963   stm32l1xx_gpio.o
         64         12          0          0          0       1173   stm32l1xx_rcc.o
@@ -1469,7 +1512,7 @@ Image component sizes
        376         30          0          0          0     204625   system_stm32l1xx.o
 
     ----------------------------------------------------------------------
-      1766        148        324         12       1536     219068   Object Totals
+      1838        156        324         24       1536     220273   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0          1          0          0   (incl. Padding)
 
@@ -1500,8 +1543,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-       514         16          0          0        100        684   Library Totals
-         4          0          0          0          4          0   (incl. Padding)
+       514         16          0          0         96        684   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1510,7 +1553,7 @@ Image component sizes
        510         16          0          0         96        684   c_w.l
 
     ----------------------------------------------------------------------
-       514         16          0          0        100        684   Library Totals
+       514         16          0          0         96        684   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1519,15 +1562,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2280        164        324         12       1636     218396   Grand Totals
-      2280        164        324         12       1636     218396   ELF Image Totals
-      2280        164        324         12          0          0   ROM Totals
+      2352        172        324         24       1632     219549   Grand Totals
+      2352        172        324         24       1632     219549   ELF Image Totals
+      2352        172        324         24          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2604 (   2.54kB)
-    Total RW  Size (RW Data + ZI Data)              1648 (   1.61kB)
-    Total ROM Size (Code + RO Data + RW Data)       2616 (   2.55kB)
+    Total RO  Size (Code + RO Data)                 2676 (   2.61kB)
+    Total RW  Size (RW Data + ZI Data)              1656 (   1.62kB)
+    Total ROM Size (Code + RO Data + RW Data)       2700 (   2.64kB)
 
 ==============================================================================
 

@@ -1,6 +1,7 @@
 #include "main.h"
 
 uint8_t arr[6] = "Hello ";
+uint32_t i = 0;
 
 void GPIO_Settings(void)
 {
@@ -67,30 +68,37 @@ void SPI1_SendBytes(char* t_data)
 	GPIO_SetBits(GPIO_SPI, NSS_Pin);
 }
 
-int main()
+void LoRa_Setup(uint32_t freq)
 {
-	uint32_t i = 0;
 	uint8_t b = 0;
 	
-	GPIO_Settings();
-	SPI_Settings();
-	
-	if (!LoRa_begin(915E6))
+	GPIOC->ODR ^= GPIO_ODR_ODR_8;
+	if (!LoRa_begin(freq))
 	{
 		while(!b)
 		{
 			b = 0;
-			b = LoRa_begin(915E6);
-			GPIOC->ODR ^= GPIO_ODR_ODR_8;
-			for (i = 0; i < 100000; i++);
+			b = LoRa_begin(freq);
+			
+			for (i = 0; i < 100; i++);
 		}
 	}
+	
 	writeRegister(REG_OP_MODE, MODE_STDBY);
 	writeRegister(REG_OP_MODE, MODE_TX);
 	
+	GPIOC->ODR ^= GPIO_ODR_ODR_8;
+}
+
+int main()
+{
+	GPIO_Settings();
+	SPI_Settings();
+	
+	LoRa_Setup(915E6);
+	
 	while(1)
-	{			
-		
+	{
 		LoRa_write("Hello World!");	
 		GPIOC->ODR ^= GPIO_ODR_ODR_9;
 		for (i = 0; i < 1000000; i++);
